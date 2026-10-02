@@ -26,16 +26,17 @@ pas indispensable pour suivre les premiers épisodes.
 
 1. [Installer un projet Payload](./01-installation-payload.md)
 2. [Créer une collection Clients](./02-creer-collection-clients.md)
+3. [Relier des missions aux clients](./03-relier-missions-clients.md)
 
 ## Parcours prévu
 
-3. Relier des missions aux clients
-4. Construire un devis et ses lignes
-5. Calculer et valider les montants
-6. Générer un aperçu PDF
-7. Mettre en place une validation interne
-8. Envoyer un document après validation humaine
-9. Préparer PostgreSQL, les sauvegardes et le déploiement
+4. Configurer les informations de l'entreprise
+5. Construire un devis et ses lignes
+6. Calculer et valider les montants
+7. Générer un aperçu PDF
+8. Mettre en place une validation interne
+9. Envoyer un document après validation humaine
+10. Préparer PostgreSQL, les sauvegardes et le déploiement
 
 La facturation et le suivi des paiements formeront une seconde partie, après la
 stabilisation du parcours consacré aux devis.
