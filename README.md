@@ -28,10 +28,10 @@ pas indispensable pour suivre les premiers épisodes.
 2. [Créer une collection Clients](./02-creer-collection-clients.md)
 3. [Relier des missions aux clients](./03-relier-missions-clients.md)
 4. [Configurer les informations de l'entreprise](./04-configurer-entreprise-global.md)
+5. [Construire un devis et ses lignes](./05-construire-devis.md)
 
 ## Parcours prévu
 
-5. Construire un devis et ses lignes
 6. Calculer et valider les montants
 7. Générer un aperçu PDF
 8. Mettre en place une validation interne
