@@ -277,12 +277,16 @@ Créer `scripts/prepare-e2e.ts` :
 
 ```ts
 import 'dotenv/config'
+import { rmSync } from 'node:fs'
+import path from 'node:path'
 import { getPayload } from 'payload'
 import config from '../src/payload.config'
 
 if (process.env.DATABASE_URL !== 'file:./payload-test.db') {
   throw new Error('E2E preparation requires the dedicated test database.')
 }
+const database = path.resolve('payload-test.db')
+for (const suffix of ['', '-wal', '-shm']) rmSync(`${database}${suffix}`, { force: true })
 const payload = await getPayload({ config })
 await payload.destroy()
 ```
@@ -299,9 +303,12 @@ Puis remplacer `test:e2e` dans `package.json` par :
 "test:e2e": "cross-env NODE_OPTIONS=--no-deprecation DOTENV_CONFIG_PATH=./test.env tsx scripts/prepare-e2e.ts && cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" DOTENV_CONFIG_PATH=./test.env PAYLOAD_TEST_SCHEMA_READY=1 playwright test --config=playwright.config.ts"
 ```
 
-La préparation active la synchronisation du schéma; le serveur et les fixtures
+La préparation réinitialise uniquement la base de test jetable puis active la
+synchronisation du schéma; le serveur et les fixtures
 utilisent ensuite ce schéma existant. Cette option est réservée aux tests de
 développement, pas une stratégie de migration de production.
+Ne jamais mettre de données à conserver dans `payload-test.db`. Le script refuse
+toute autre valeur de `DATABASE_URL`; lancer la commande à la racine du projet.
 
 Arrêter `pnpm dev` puis exécuter :
 
