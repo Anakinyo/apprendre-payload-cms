@@ -107,7 +107,24 @@ pnpm generate:types
 
 ## 5. Ajouter les tests unitaires
 
-Créer `tests/unit/quoteAmounts.unit.spec.ts`. Tester notamment :
+Créer `tests/unit/quoteAmounts.unit.spec.ts`. Les dépendances et la configuration
+initiale sont décrites dans le [chapitre 4](./04-configurer-entreprise-global.md#installer-et-configurer-les-tests).
+Vitest est déjà installé. Un test unitaire complet doit importer le lanceur
+de tests et la fonction à vérifier :
+
+```ts
+import { describe, expect, it } from 'vitest'
+import { calculateQuoteAmounts } from '../../src/domain/quoteAmounts'
+
+describe('Montants du devis', () => {
+  it('calcule 1,5 jour avec une TVA de 20 %', () => {
+    expect(calculateQuoteAmounts([{ quantity: 1.5, unitPriceCents: 35000 }], 2000))
+      .toEqual({ lineTotalsCents: [52500], subtotalCents: 52500, taxCents: 10500, totalCents: 63000 })
+  })
+})
+```
+
+Compléter ce fichier avec les cas suivants :
 
 - 1,5 jour à 350 euros avec une TVA de 20 % ;
 - deux demi-centimes, arrondis séparément à un centime chacun ;
@@ -144,6 +161,18 @@ Les tests unitaires ne démarrent pas Payload. Les tests d'intégration vérifie
 le recalcul lors d'une mise à jour partielle, le remplacement d'un total fourni
 par la requête, la copie des réglages et leur conservation après modification
 du Global. Les tests navigateur continuent de contrôler les formulaires.
+
+Pour exécuter uniquement les tests unitaires :
+
+```powershell
+pnpm test:unit
+pnpm exec vitest --config ./vitest.config.mts tests/unit
+```
+
+La première commande exécute puis termine la suite. La deuxième reste en mode
+surveillance et relance les tests après une modification; `Ctrl+C` l'arrête.
+Les tests unitaires fonctionnent avec `pnpm dev` ouvert; les tests navigateur
+exigent de l'arrêter. `pnpm test` enchaîne les trois suites avant publication.
 
 ## 6. Vérifier dans l'application
 

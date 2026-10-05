@@ -30,10 +30,10 @@ pas indispensable pour suivre les premiers épisodes.
 4. [Configurer les informations de l'entreprise](./04-configurer-entreprise-global.md)
 5. [Construire un devis et ses lignes](./05-construire-devis.md)
 6. [Calculer et valider les montants](./06-calculer-montants.md)
+7. [Figer un aperçu du devis et générer le PDF](./07-generer-apercu-pdf.md)
 
 ## Parcours prévu
 
-7. Générer un aperçu PDF
 8. Mettre en place une validation interne
 9. Envoyer un document après validation humaine
 10. Préparer PostgreSQL, les sauvegardes et le déploiement

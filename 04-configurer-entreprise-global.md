@@ -286,6 +286,84 @@ pnpm generate:types
 Payload ajoute alors une interface `CompanySetting` dans
 `src/payload-types.ts`.
 
+## Installer et configurer les tests
+
+Le modèle Blank fournit déjà les outils et plusieurs fichiers de test. Voici
+comment les remettre en place dans un projet qui ne les possède pas. Exécuter
+ces commandes à la racine de l'application, où se trouve `package.json` :
+
+```powershell
+pnpm install
+pnpm add -D vitest @vitejs/plugin-react vite-tsconfig-paths jsdom @playwright/test tsx
+pnpm add cross-env dotenv
+pnpm exec playwright install chromium
+```
+
+Pour un clone du dépôt du fil rouge, `pnpm install` suffit : les dépendances
+sont déjà déclarées. Installer ensuite Chromium avec la dernière commande.
+Conserver `pnpm-lock.yaml` dans Git pour reproduire les versions installées.
+
+Créer `vitest.setup.ts` :
+
+```ts
+import 'dotenv/config'
+```
+
+Créer `vitest.config.mts` :
+
+```ts
+import { defineConfig } from 'vitest/config'
+import react from '@vitejs/plugin-react'
+import tsconfigPaths from 'vite-tsconfig-paths'
+
+export default defineConfig({
+  plugins: [tsconfigPaths(), react()],
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./vitest.setup.ts'],
+    include: ['tests/int/**/*.int.spec.ts'],
+  },
+})
+```
+
+Vitest reconnaît les fichiers `tests/int/*.int.spec.ts`. `tsconfigPaths` résout
+les alias comme `@/payload.config`. Créer un premier fichier
+`tests/int/company.int.spec.ts` :
+
+```ts
+import { getPayload, type Payload } from 'payload'
+import config from '@/payload.config'
+import { beforeAll, describe, expect, it } from 'vitest'
+
+let payload: Payload
+
+describe('Configuration entreprise', () => {
+  beforeAll(async () => {
+    payload = await getPayload({ config })
+  })
+
+  it('enregistre le nom et normalise le SIRET', async () => {
+    const settings = await payload.updateGlobal({
+      slug: 'company-settings',
+      data: {
+        legalName: 'Entreprise de test',
+        siret: '123 456 789 00012',
+        contact: { email: 'contact@example.com' },
+      },
+    })
+    expect(settings.legalName).toBe('Entreprise de test')
+    expect(settings.siret).toBe('12345678900012')
+  })
+})
+```
+
+Utiliser exclusivement la base de test configurée ci-dessous. Pour les
+collections, supprimer les documents créés dans un `afterAll` en utilisant
+leurs identifiants. Le dépôt regroupe déjà ces cas dans
+`tests/int/api.int.spec.ts`; ne pas ajouter deux suites qui modifient le même
+Global simultanément. La Local API contourne les permissions par défaut :
+utiliser `overrideAccess: false` pour tester explicitement les accès.
+
 ## Tester le Global avec la Local API
 
 La Local API permet d'utiliser Payload directement côté serveur, sans requête
@@ -366,9 +444,15 @@ Les tests Playwright doivent également démarrer leur propre serveur. Dans
 `playwright.config.ts`, utiliser par exemple le port `3001` :
 
 ```ts
+import { defineConfig, devices } from '@playwright/test'
+import 'dotenv/config'
+
 const testServerURL = 'http://127.0.0.1:3001'
 
 export default defineConfig({
+  testDir: './tests/e2e',
+  reporter: 'html',
+  projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
   use: { baseURL: testServerURL },
   webServer: {
     command: 'pnpm exec next dev --hostname 127.0.0.1 --port 3001',
@@ -377,6 +461,24 @@ export default defineConfig({
   },
 })
 ```
+
+Créer un premier fichier `tests/e2e/login.e2e.spec.ts` :
+
+```ts
+import { expect, test } from '@playwright/test'
+
+test('affiche le formulaire de connexion', async ({ page }) => {
+  await page.goto('/admin/login')
+  await expect(page.locator('#field-email')).toBeVisible()
+  await expect(page.locator('#field-password')).toBeVisible()
+})
+```
+
+Cet exemple suppose que la base possède déjà un utilisateur. Sur une base
+neuve, Payload propose d'abord sa création. Le dépôt fournit
+`tests/helpers/seedUser.ts` et `tests/helpers/login.ts` pour créer puis
+supprimer un utilisateur de test et se connecter de façon reproductible.
+Ne pas utiliser de véritables identifiants dans ces fichiers.
 
 Le serveur de test reçoit `DOTENV_CONFIG_PATH=./test.env` et utilise donc la
 base dédiée. Next.js n'autorise qu'un serveur de développement par projet : il
@@ -388,6 +490,32 @@ Au premier lancement, installer le navigateur de test si Playwright le demande :
 ```powershell
 pnpm exec playwright install chromium
 ```
+
+## Lancer et lire les résultats
+
+Arrêter `pnpm dev` avec `Ctrl+C` avant les tests navigateur. À la racine du
+projet, exécuter :
+
+```powershell
+pnpm test:int
+pnpm test:e2e
+pnpm test
+pnpm exec playwright show-report
+```
+
+La première commande vérifie les modèles et les hooks; la deuxième pilote
+le navigateur; `pnpm test` enchaîne les suites. Vitest affiche les assertions
+en échec. Playwright crée un rapport ouvrable avec la dernière commande.
+Une commande réussie retourne un code zéro; corriger les échecs avant publication.
+
+Ajouter `/playwright-report/` et `/test-results/` au `.gitignore`, ainsi que
+la base temporaire. Versionner les tests et leur configuration, mais pas
+les rapports ni la base. Relancer `pnpm dev` après les tests.
+
+Si « No test files found » apparaît, vérifier le nom, le dossier et `include`.
+Si Chromium est absent, relancer sa commande d'installation. Si Next.js
+annonce qu'un serveur existe déjà, arrêter le serveur du projet avant de
+réessayer. Des migrations explicites seront nécessaires avant la production.
 
 ## Quels tests utiliser ?
 
