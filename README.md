@@ -32,10 +32,10 @@ pas indispensable pour suivre les premiers épisodes.
 6. [Calculer et valider les montants](./06-calculer-montants.md)
 7. [Figer un aperçu du devis et générer le PDF](./07-generer-apercu-pdf.md)
 8. [Valider une version précise en interne](./08-validation-interne.md)
+9. [Numéroter le devis final et préparer son e-mail](./09-devis-final-et-email.md)
 
 ## Parcours prévu
 
-9. Envoyer un document après validation humaine
 10. Préparer PostgreSQL, les sauvegardes et le déploiement
 
 La facturation et le suivi des paiements formeront une seconde partie, après la

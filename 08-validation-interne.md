@@ -440,7 +440,7 @@ visible dans l'application, mais ne transforme pas ce fichier en document final
 
 ## Prochaine étape
 
-Préparer le document final et un envoi explicitement déclenché après validation
+Le [chapitre 9](./09-devis-final-et-email.md) prépare le document final et un envoi explicitement déclenché après validation
 humaine, sans utiliser le devis courant à la place de la version relue. Le numéro
 commercial, la présentation finale et la configuration de l'e-mail seront traités
 avant tout envoi réel.
