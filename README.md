@@ -33,10 +33,13 @@ pas indispensable pour suivre les premiers épisodes.
 7. [Figer un aperçu du devis et générer le PDF](./07-generer-apercu-pdf.md)
 8. [Valider une version précise en interne](./08-validation-interne.md)
 9. [Numéroter le devis final et préparer son e-mail](./09-devis-final-et-email.md)
+10. [Sauvegarder et préparer le travail hors connexion](./10-sauvegardes-et-architecture-hors-ligne.md)
 
 ## Parcours prévu
 
-10. Préparer PostgreSQL, les sauvegardes et le déploiement
+11. Construire une interface installable et des brouillons locaux
+12. Synchroniser les appareils et résoudre les conflits
+13. Préparer PostgreSQL, les migrations et le déploiement retenu
 
 La facturation et le suivi des paiements formeront une seconde partie, après la
 stabilisation du parcours consacré aux devis.

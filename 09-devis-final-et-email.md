@@ -327,6 +327,8 @@ l'activité, configurer un vrai fournisseur et définir les rôles de production
 Le stockage PDF/MIME en base est simple pour l'apprentissage, mais devra être
 réévalué pour des volumes importants et une politique de conservation.
 
-Le chapitre 10 préparera PostgreSQL, les migrations, les sauvegardes et le
-déploiement. Les factures, paiements et obligations de facturation électronique
+Le [chapitre 10](./10-sauvegardes-et-architecture-hors-ligne.md) prépare les
+sauvegardes et cadre le futur mode hors connexion. PostgreSQL, les migrations
+et le déploiement seront abordés après ces choix d'architecture.
+Les factures, paiements et obligations de facturation électronique
 appartiendront à une seconde partie, avec vérification des règles applicables.

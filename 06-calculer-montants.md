@@ -144,7 +144,7 @@ expect(calculateQuoteAmounts([{ quantity: 1.5, unitPriceCents: 35000 }], 2000))
 Étendre `vitest.config.mts` :
 
 ```ts
-include: ['tests/int/**/*.int.spec.ts', 'tests/unit/**/*.unit.spec.ts']
+include: ['tests/int/**/*.int.spec.ts', 'tests/unit/**/*.unit.spec.{ts,tsx}']
 ```
 
 Dans `package.json`, séparer les commandes en conservant leur configuration :

@@ -245,6 +245,15 @@ pnpm generate:importmap
 Reprendre le composant complet dans
 [QuotePreviewActions.tsx](https://github.com/Anakinyo/payload-archiviste/blob/main/src/components/QuotePreviewActions.tsx).
 
+Le bouton reste aussi désactivé pendant le rendu serveur et l'hydratation :
+il ne faut pas afficher une action disponible avant que React puisse traiter
+son clic. Le composant utilise `useSyncExternalStore` avec un snapshot serveur
+`false` et un snapshot client `true`, en plus des gardes `busy` et `modified`.
+La [documentation React](https://react.dev/reference/react/useSyncExternalStore#adding-support-for-server-rendering)
+explique le snapshot initial d'hydratation. Un
+[test ciblé](https://github.com/Anakinyo/payload-archiviste/blob/main/tests/unit/quotePreviewActions.unit.spec.tsx)
+vérifie le HTML serveur désactivé puis le premier clic après hydratation.
+
 ## 7. Vérifier avec les tests
 
 L'installation et le lancement des tests sont détaillés au
