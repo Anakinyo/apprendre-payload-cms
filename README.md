@@ -35,10 +35,10 @@ pas indispensable pour suivre les premiers épisodes.
 9. [Numéroter le devis final et préparer son e-mail](./09-devis-final-et-email.md)
 10. [Sauvegarder et préparer le travail hors connexion](./10-sauvegardes-et-architecture-hors-ligne.md)
 11. [Construire un espace de travail sur un ordinateur](./11-espace-de-travail-local.md)
+12. [Importer les clients depuis un CSV](./12-importer-clients-csv.md)
 
 ## Parcours prévu
 
-12. Préparer l'import des clients avec prévisualisation et gestion des doublons
 13. Personnaliser les documents et approfondir les missions
 
 Le premier usage se fait uniquement sur un ordinateur portable, avec Payload

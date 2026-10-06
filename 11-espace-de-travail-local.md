@@ -233,7 +233,8 @@ Sources : [unitaires](https://github.com/Anakinyo/payload-archiviste/blob/main/t
 
 ## Prochaine étape
 
-Faire essayer le parcours réel sur le portable, affiner les formulaires et les
-documents, puis préparer l'import des clients du tableur avec prévisualisation
-et gestion des doublons. Téléphone, PWA, synchronisation et hébergement distant
+Le [chapitre 12](./12-importer-clients-csv.md) ajoute l'import des clients du
+tableur avec prévisualisation et gestion des doublons. Faire essayer ensuite
+le parcours réel sur le portable et affiner les formulaires et les documents.
+Téléphone, PWA, synchronisation et hébergement distant
 restent des évolutions possibles après validation de cet usage local.
