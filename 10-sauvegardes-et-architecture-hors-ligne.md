@@ -288,7 +288,8 @@ session expirée, changements de compte et fermeture/réouverture hors ligne.
 
 ## Prochaine étape
 
-Construire l'interface PWA et ses premiers brouillons locaux, puis ajouter la
-synchronisation et ses protections. PostgreSQL, les migrations de production
-et le choix d'hébergement restent des étapes distinctes. Rien dans ce chapitre
-ne rend encore l'application utilisable sans connexion au serveur.
+Le [chapitre 11](./11-espace-de-travail-local.md) poursuit d'abord l'usage sur
+un ordinateur portable : accueil métier, recherche et démarrage local.
+La PWA, la synchronisation, PostgreSQL et le choix d'hébergement restent des
+extensions distinctes pour plus tard. Rien dans ce chapitre ne rend encore
+l'application autonome sans connexion au serveur local.

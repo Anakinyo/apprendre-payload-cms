@@ -34,12 +34,17 @@ pas indispensable pour suivre les premiers épisodes.
 8. [Valider une version précise en interne](./08-validation-interne.md)
 9. [Numéroter le devis final et préparer son e-mail](./09-devis-final-et-email.md)
 10. [Sauvegarder et préparer le travail hors connexion](./10-sauvegardes-et-architecture-hors-ligne.md)
+11. [Construire un espace de travail sur un ordinateur](./11-espace-de-travail-local.md)
 
 ## Parcours prévu
 
-11. Construire une interface installable et des brouillons locaux
-12. Synchroniser les appareils et résoudre les conflits
-13. Préparer PostgreSQL, les migrations et le déploiement retenu
+12. Préparer l'import des clients avec prévisualisation et gestion des doublons
+13. Personnaliser les documents et approfondir les missions
+
+Le premier usage se fait uniquement sur un ordinateur portable, avec Payload
+et SQLite en local. L'interface installable sur téléphone, la synchronisation,
+PostgreSQL et l'hébergement distant restent des extensions possibles après
+validation de cet usage, pas des prérequis pour commencer.
 
 La facturation et le suivi des paiements formeront une seconde partie, après la
 stabilisation du parcours consacré aux devis.
