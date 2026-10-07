@@ -42,10 +42,11 @@ pas indispensable pour suivre les premiers épisodes.
 16. [Synthétiser le suivi des missions et des livrables](./16-synthese-missions-livrables.md)
 17. [Préparer la facturation sans émettre de facture](./17-preparer-facturation.md)
 18. [Conserver une relecture de facture et ses contrôles](./18-relecture-factures.md)
+19. [Enregistrer une décision humaine sur une relecture de facture](./19-decider-relecture-facture.md)
 
 ## Parcours prévu
 
-19. Enregistrer une décision humaine sur une version précise avant émission
+20. Préparer l'émission définitive et sa numérotation après confirmation du cadrage
 
 Le premier usage se fait uniquement sur un ordinateur portable, avec Payload
 et SQLite en local. L'interface installable sur téléphone, la synchronisation,
