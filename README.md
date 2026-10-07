@@ -40,10 +40,11 @@ pas indispensable pour suivre les premiers épisodes.
 14. [Suivre les journées réalisées et le temps de mission](./14-suivre-journees-missions.md)
 15. [Organiser les pièces et les livrables des missions](./15-organiser-pieces-livrables.md)
 16. [Synthétiser le suivi des missions et des livrables](./16-synthese-missions-livrables.md)
+17. [Préparer la facturation sans émettre de facture](./17-preparer-facturation.md)
 
 ## Parcours prévu
 
-17. Préparer la facturation et le suivi des paiements
+18. Préparer la relecture et les contrôles avant émission d'une facture
 
 Le premier usage se fait uniquement sur un ordinateur portable, avec Payload
 et SQLite en local. L'interface installable sur téléphone, la synchronisation,
