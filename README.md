@@ -36,10 +36,11 @@ pas indispensable pour suivre les premiers épisodes.
 10. [Sauvegarder et préparer le travail hors connexion](./10-sauvegardes-et-architecture-hors-ligne.md)
 11. [Construire un espace de travail sur un ordinateur](./11-espace-de-travail-local.md)
 12. [Importer les clients depuis un CSV](./12-importer-clients-csv.md)
+13. [Personnaliser le devis et figer les informations de mission](./13-personnaliser-devis-et-mission.md)
 
 ## Parcours prévu
 
-13. Personnaliser les documents et approfondir les missions
+14. Suivre les journées réalisées et l'avancement des missions
 
 Le premier usage se fait uniquement sur un ordinateur portable, avec Payload
 et SQLite en local. L'interface installable sur téléphone, la synchronisation,

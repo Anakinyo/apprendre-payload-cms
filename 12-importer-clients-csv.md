@@ -265,6 +265,7 @@ composant React interactif et une transaction pour traiter un besoin métier
 concret. Le tableur n'est pas connecté en continu : importer un export est
 une action ponctuelle et manuelle, pas une synchronisation.
 
-La suite porte sur les documents et les missions. XLSX, connexion directe à
+Le [chapitre 13](./13-personnaliser-devis-et-mission.md) personnalise les devis
+et fige les informations publiques de mission. XLSX, connexion directe à
 Google Sheets, mise à jour par comparaison, historique d'import et annulation
 d'un import validé restent des évolutions possibles, non implémentées ici.
