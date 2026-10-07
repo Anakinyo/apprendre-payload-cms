@@ -265,7 +265,7 @@ documents. Aucune émission d'e-mail automatique n'est ajoutée ici.
 
 ## Suite du parcours
 
-Le prochain chapitre peut ajouter le journal des journées réalisées et un
-suivi opérationnel des missions. Les ordres de mission distincts, photos,
+Le [chapitre 14](./14-suivre-journees-missions.md) ajoute le journal des journées
+réalisées et un suivi opérationnel des missions. Les ordres de mission distincts, photos,
 logos et modèles plus avancés pourront ensuite réutiliser les mêmes principes
 de données structurées, snapshot immuable, aperçu et validation humaine.

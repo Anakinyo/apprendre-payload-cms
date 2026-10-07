@@ -37,10 +37,11 @@ pas indispensable pour suivre les premiers épisodes.
 11. [Construire un espace de travail sur un ordinateur](./11-espace-de-travail-local.md)
 12. [Importer les clients depuis un CSV](./12-importer-clients-csv.md)
 13. [Personnaliser le devis et figer les informations de mission](./13-personnaliser-devis-et-mission.md)
+14. [Suivre les journées réalisées et le temps de mission](./14-suivre-journees-missions.md)
 
 ## Parcours prévu
 
-14. Suivre les journées réalisées et l'avancement des missions
+15. Organiser les pièces et les livrables des missions
 
 Le premier usage se fait uniquement sur un ordinateur portable, avec Payload
 et SQLite en local. L'interface installable sur téléphone, la synchronisation,
