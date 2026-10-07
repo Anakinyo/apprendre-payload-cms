@@ -41,10 +41,11 @@ pas indispensable pour suivre les premiers épisodes.
 15. [Organiser les pièces et les livrables des missions](./15-organiser-pieces-livrables.md)
 16. [Synthétiser le suivi des missions et des livrables](./16-synthese-missions-livrables.md)
 17. [Préparer la facturation sans émettre de facture](./17-preparer-facturation.md)
+18. [Conserver une relecture de facture et ses contrôles](./18-relecture-factures.md)
 
 ## Parcours prévu
 
-18. Préparer la relecture et les contrôles avant émission d'une facture
+19. Enregistrer une décision humaine sur une version précise avant émission
 
 Le premier usage se fait uniquement sur un ordinateur portable, avec Payload
 et SQLite en local. L'interface installable sur téléphone, la synchronisation,
