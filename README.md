@@ -39,10 +39,11 @@ pas indispensable pour suivre les premiers épisodes.
 13. [Personnaliser le devis et figer les informations de mission](./13-personnaliser-devis-et-mission.md)
 14. [Suivre les journées réalisées et le temps de mission](./14-suivre-journees-missions.md)
 15. [Organiser les pièces et les livrables des missions](./15-organiser-pieces-livrables.md)
+16. [Synthétiser le suivi des missions et des livrables](./16-synthese-missions-livrables.md)
 
 ## Parcours prévu
 
-16. Synthétiser le suivi des missions et les livrables à préparer
+17. Préparer la facturation et le suivi des paiements
 
 Le premier usage se fait uniquement sur un ordinateur portable, avec Payload
 et SQLite en local. L'interface installable sur téléphone, la synchronisation,
