@@ -1,6 +1,6 @@
 # Avancement et périmètre de la première version locale
 
-État au 8 octobre 2026, après le chapitre 22.
+État au 8 octobre 2026, après le chapitre 23.
 
 ## Déjà implémenté
 
@@ -11,8 +11,8 @@
 | Devis | Lignes, montants, personnalisation, aperçu PDF, validation interne, numéro final et préparation d'e-mail | Présentation attendue et configuration réelle des courriels |
 | Missions | Relations clients, journées, temps, pièces, livrables, synthèse | Ergonomie avec quelques missions représentatives |
 | Sauvegardes | Création et vérification locales | Organisation d'une copie hors du disque de travail et exercice de restauration |
-| Facturation | Brouillons, relectures immuables, décisions, paramètres, mentions figées, bilan avant émission | Reprise des vrais numéros et qualification des mentions |
-| Cours | 22 chapitres, commandes et tests expliqués | Relecture pédagogique par une personne extérieure |
+| Facturation | Brouillons, relectures, décisions, émission numérotée et PDF immuable pour le parcours EI sans TVA en France | Reprise des vrais numéros, mentions, PDF et circuit de transmission ; paiements et avoirs manquants |
+| Cours | 23 chapitres, commandes et tests expliqués | Relecture pédagogique par une personne extérieure |
 
 « Implémenté » ne signifie pas encore « accepté par l'utilisatrice ». Les tests
 automatiques n'évaluent ni les habitudes de travail, ni les données réelles,
@@ -32,14 +32,11 @@ transmission des factures reste à qualifier avant de remplacer un outil existan
 
 ## Lots restants
 
-1. **Émission et PDF de facture** : attribution cohérente et unique des numéros,
-   recontrôle à l'émission, conservation du document, double clic/concurrence,
-   échecs et récupération. La consultation ne doit jamais émettre une facture.
-2. **Paiements et suivi** : encaissements partiels, solde, échéances et corrections
+1. **Paiements et suivi** : encaissements partiels, solde, échéances et corrections
    tracées ; préciser le traitement des avoirs avant l'usage réel de la facturation.
-3. **Recette et exploitation locale** : données représentatives, courriel configuré
+2. **Recette et exploitation locale** : données représentatives, courriel configuré
    sans envoi de test aux clients, démarrage, sauvegarde et restauration, corrections.
-4. **Clôture du cours** : parcours reproductible, liens, commandes et limites,
+3. **Clôture du cours** : parcours reproductible, liens, commandes et limites,
    vérification depuis une installation propre.
 
 Un récapitulatif des encaissements par période peut compléter le lot paiements.
@@ -48,9 +45,9 @@ qualification des règles et des données nécessaires.
 
 ## Estimation
 
-Prévoir **4 à 6 lots de travail supplémentaires**, recette comprise, pour cette
-version locale bornée. Le lot émission est le plus sensible et peut nécessiter
-deux passages. Il ne s'agit pas de quatre à six messages ni d'un engagement de date.
+Prévoir **3 à 5 lots de travail supplémentaires**, recette comprise, pour cette
+version locale bornée. L'émission initiale est implémentée, mais sa recette peut
+nécessiter des corrections. Il ne s'agit pas de trois à cinq messages ni d'un engagement de date.
 
 À raison de deux à trois lots validés par semaine, cela représente approximativement
 **deux à trois semaines**, à condition que les informations de reprise soient

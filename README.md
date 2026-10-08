@@ -46,10 +46,10 @@ pas indispensable pour suivre les premiers épisodes.
 20. [Préparer les paramètres de facturation et la reprise des numéros](./20-parametres-facturation-et-numerotation.md)
 21. [Figer les mentions de facturation dans une relecture](./21-figer-mentions-facturation.md)
 22. [Vérifier la situation avant émission](./22-bilan-avant-emission.md)
+23. [Émettre une facture et conserver son PDF](./23-emettre-facture-et-pdf.md)
 
 ## Parcours prévu
 
-23. Construire l'émission définitive, sa numérotation et son document
 24. Enregistrer les paiements et suivre les soldes
 25. Recetter et exploiter la première version locale
 
@@ -61,8 +61,8 @@ et SQLite en local. L'interface installable sur téléphone, la synchronisation,
 PostgreSQL et l'hébergement distant restent des extensions possibles après
 validation de cet usage, pas des prérequis pour commencer.
 
-La partie facturation est en cours ; l'émission définitive et les paiements ne
-sont pas encore disponibles.
+L'émission initiale des factures est implémentée dans un périmètre limité ; les
+paiements et les avoirs restent à construire avant une bascule complète.
 
 ## Philosophie du cours
 
