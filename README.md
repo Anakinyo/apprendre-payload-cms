@@ -47,11 +47,12 @@ pas indispensable pour suivre les premiers épisodes.
 21. [Figer les mentions de facturation dans une relecture](./21-figer-mentions-facturation.md)
 22. [Vérifier la situation avant émission](./22-bilan-avant-emission.md)
 23. [Émettre une facture et conserver son PDF](./23-emettre-facture-et-pdf.md)
+24. [Enregistrer les paiements et suivre le solde](./24-enregistrer-paiements-et-soldes.md)
 
 ## Parcours prévu
 
-24. Enregistrer les paiements et suivre les soldes
-25. Recetter et exploiter la première version locale
+25. Corriger les factures avec un parcours d'avoirs
+26. Recetter et exploiter la première version locale
 
 Le [bilan d'avancement et la feuille de route](./AVANCEMENT.md) distinguent ce qui
 est implémenté, ce qui reste à développer et ce qui doit être validé en usage réel.
@@ -61,8 +62,8 @@ et SQLite en local. L'interface installable sur téléphone, la synchronisation,
 PostgreSQL et l'hébergement distant restent des extensions possibles après
 validation de cet usage, pas des prérequis pour commencer.
 
-L'émission initiale des factures est implémentée dans un périmètre limité ; les
-paiements et les avoirs restent à construire avant une bascule complète.
+L'émission initiale des factures et le suivi des paiements sont implémentés dans un
+périmètre limité ; les avoirs et la recette restent à traiter avant une bascule complète.
 
 ## Philosophie du cours
 
