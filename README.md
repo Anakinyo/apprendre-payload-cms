@@ -44,10 +44,10 @@ pas indispensable pour suivre les premiers épisodes.
 18. [Conserver une relecture de facture et ses contrôles](./18-relecture-factures.md)
 19. [Enregistrer une décision humaine sur une relecture de facture](./19-decider-relecture-facture.md)
 20. [Préparer les paramètres de facturation et la reprise des numéros](./20-parametres-facturation-et-numerotation.md)
+21. [Figer les mentions de facturation dans une relecture](./21-figer-mentions-facturation.md)
 
 ## Parcours prévu
 
-21. Figer les mentions de facturation dans une nouvelle version à relire
 22. Construire l'émission définitive, sa numérotation et son document
 
 Le premier usage se fait uniquement sur un ordinateur portable, avec Payload
