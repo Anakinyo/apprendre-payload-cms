@@ -45,18 +45,24 @@ pas indispensable pour suivre les premiers épisodes.
 19. [Enregistrer une décision humaine sur une relecture de facture](./19-decider-relecture-facture.md)
 20. [Préparer les paramètres de facturation et la reprise des numéros](./20-parametres-facturation-et-numerotation.md)
 21. [Figer les mentions de facturation dans une relecture](./21-figer-mentions-facturation.md)
+22. [Vérifier la situation avant émission](./22-bilan-avant-emission.md)
 
 ## Parcours prévu
 
-22. Construire l'émission définitive, sa numérotation et son document
+23. Construire l'émission définitive, sa numérotation et son document
+24. Enregistrer les paiements et suivre les soldes
+25. Recetter et exploiter la première version locale
+
+Le [bilan d'avancement et la feuille de route](./AVANCEMENT.md) distinguent ce qui
+est implémenté, ce qui reste à développer et ce qui doit être validé en usage réel.
 
 Le premier usage se fait uniquement sur un ordinateur portable, avec Payload
 et SQLite en local. L'interface installable sur téléphone, la synchronisation,
 PostgreSQL et l'hébergement distant restent des extensions possibles après
 validation de cet usage, pas des prérequis pour commencer.
 
-La facturation et le suivi des paiements formeront une seconde partie, après la
-stabilisation du parcours consacré aux devis.
+La partie facturation est en cours ; l'émission définitive et les paiements ne
+sont pas encore disponibles.
 
 ## Philosophie du cours
 
