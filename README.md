@@ -52,6 +52,7 @@ pas indispensable pour suivre les premiers épisodes.
 ## Parcours prévu
 
 Bonus : [Configurer SMTP et le mot de passe oublié](./bonus-email-smtp.md).
+Bonus : [Dater les missions et préparer les relevés d'élimination](./bonus-releves-elimination.md).
 
 25. Corriger les factures avec un parcours d'avoirs
 26. Recetter et exploiter la première version locale
