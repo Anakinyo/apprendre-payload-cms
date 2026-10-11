@@ -53,6 +53,7 @@ pas indispensable pour suivre les premiers épisodes.
 
 Bonus : [Configurer SMTP et le mot de passe oublié](./bonus-email-smtp.md).
 Bonus : [Dater les missions et préparer les relevés d'élimination](./bonus-releves-elimination.md).
+Bonus : [Créer des fiches de classement numérotées par mission](./bonus-fiches-classement.md).
 
 25. Corriger les factures avec un parcours d'avoirs
 26. Recetter et exploiter la première version locale
