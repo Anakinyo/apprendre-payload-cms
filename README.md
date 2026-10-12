@@ -48,6 +48,7 @@ pas indispensable pour suivre les premiers épisodes.
 22. [Vérifier la situation avant émission](./22-bilan-avant-emission.md)
 23. [Émettre une facture et conserver son PDF](./23-emettre-facture-et-pdf.md)
 24. [Enregistrer les paiements et suivre le solde](./24-enregistrer-paiements-et-soldes.md)
+25. [Émettre des avoirs et distinguer les corrections](./25-avoirs-et-corrections.md)
 
 ## Parcours prévu
 
@@ -56,7 +57,6 @@ Bonus : [Dater les missions et préparer les relevés d'élimination](./bonus-re
 Bonus : [Créer des fiches de classement numérotées par mission](./bonus-fiches-classement.md).
 Bonus : [Remplir automatiquement les intitulés de mission](./bonus-intitules-missions.md).
 
-25. Corriger les factures avec un parcours d'avoirs
 26. Recetter et exploiter la première version locale
 
 Le [bilan d'avancement et la feuille de route](./AVANCEMENT.md) distinguent ce qui
@@ -69,7 +69,8 @@ PostgreSQL et l'hébergement distant restent des extensions possibles après
 validation de cet usage, pas des prérequis pour commencer.
 
 L'émission initiale des factures et le suivi des paiements sont implémentés dans un
-périmètre limité ; les avoirs et la recette restent à traiter avant une bascule complète.
+périmètre limité ; les avoirs partiels et totaux complètent ce parcours. La recette,
+la reprise réelle et les cas de correction hors périmètre restent à qualifier avant bascule.
 
 ## Philosophie du cours
 

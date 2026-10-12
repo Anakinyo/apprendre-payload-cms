@@ -32,7 +32,10 @@ factures. Ne pas utiliser les vrais compteurs pour apprendre le parcours.
 - [ ] Préparer une facture et vérifier les paramètres et le numéro proposé.
 - [ ] Enregistrer deux paiements partiels ; vérifier le solde restant.
 - [ ] Annuler une saisie erronée avec un motif ; vérifier l'historique.
-- [ ] Ne pas confondre cette annulation avec un avoir : les avoirs restent à développer.
+- [ ] Configurer une série d'avoirs fictive, prévisualiser et confirmer un avoir partiel.
+- [ ] Vérifier le nouveau solde, le PDF initial inchangé et le téléchargement de l'avoir.
+- [ ] Tester un avoir total après paiement : un crédit client apparaît, sans remboursement fictif.
+- [ ] Distinguer annulation de saisie, avoir et remboursement réellement effectué.
 
 ## Sauvegarde et récupération
 

@@ -1,6 +1,6 @@
 # Avancement et périmètre de la première version locale
 
-État au 12 octobre 2026, après le chapitre 24 et les bonus métier.
+État au 12 octobre 2026, après le chapitre 25 et les bonus métier.
 
 ## Déjà implémenté
 
@@ -13,9 +13,9 @@
 | Classement | Fiches par mission, compteur indépendant et ajustable, ordre, années extrêmes, catégories sur deux niveaux, supports, choix W ou Cadre 1926 | Premier formulaire à affiner ; cotation détaillée, impression et export non implémentés |
 | Courriels | Transport SMTP commun et récupération du mot de passe testés localement | Branchement au fournisseur et réception réelle différés |
 | Sauvegardes | Création et vérification locales | Organisation d'une copie hors du disque de travail et exercice de restauration |
-| Facturation | Brouillons, relectures, décisions, émission numérotée et PDF immuable pour le parcours EI sans TVA en France | Reprise des vrais numéros, mentions, PDF et circuit de transmission ; avoirs manquants |
+| Facturation | Brouillons, relectures, décisions, émission numérotée et PDF immuable pour le parcours EI sans TVA en France ; avoirs partiels/totaux et solde ajusté | Reprise des vrais numéros, mentions, PDF et transmission ; corrections d'identité/TVA et refacturation liée hors périmètre |
 | Paiements | Journal immuable, règlements partiels, solde par facture et annulations de saisie motivées | Exemples réels, remboursements et vue globale non couverts |
-| Cours | 24 chapitres et bonus SMTP, relevés d'élimination, fiches de classement et intitulés automatiques ; commandes et tests expliqués | Relecture pédagogique par une personne extérieure |
+| Cours | 25 chapitres et bonus SMTP, relevés d'élimination, fiches de classement et intitulés automatiques ; commandes et tests expliqués | Relecture pédagogique par une personne extérieure |
 
 « Implémenté » ne signifie pas encore « accepté par l'utilisatrice ». Les tests
 automatiques n'évaluent ni les habitudes de travail, ni les données réelles,
@@ -38,8 +38,8 @@ transmission des factures reste à qualifier avant de remplacer un outil existan
 Une [liste de recette à remplir](./RECETTE.md) est disponible. Sa préparation
 ne signifie pas que les essais sur l'ordinateur cible ont été réalisés.
 
-1. **Corrections de facturation** : qualifier et traiter les avoirs avant la bascule ;
-   ne pas les confondre avec une annulation de saisie de paiement.
+1. **Validation de la facturation** : confirmer les séries et tester les avoirs ;
+   qualifier les besoins de remise avant facturation, de refacturation et de remboursement.
 2. **Recette et exploitation locale** : données représentatives, courriel configuré
    sans envoi de test aux clients, démarrage, sauvegarde et restauration, corrections.
 3. **Clôture du cours** : parcours reproductible, liens, commandes et limites,
@@ -56,8 +56,9 @@ un périmètre complémentaire aux lots de facturation et d'exploitation ci-dess
 ## Estimation
 
 Prévoir encore **3 à 4 lots de travail**, recette comprise, pour cette version locale
-bornée. Les paiements sont implémentés ; les avoirs et la validation en usage réel
-restent importants. Ce n'est pas un engagement de date.
+bornée. Les paiements et avoirs du périmètre sont implémentés ; la validation en
+usage réel et les éventuels besoins complémentaires restent importants. Ce n'est
+pas un engagement de date.
 
 À raison de deux à trois lots validés par semaine, cela représente approximativement
 **deux à trois semaines**, à condition que les informations de reprise soient
@@ -67,6 +68,7 @@ repousse la date de validation, même si le développement est terminé.
 ## Informations à obtenir avant bascule
 
 - Le dernier numéro de facture réellement émis, son format et sa date.
+- L'historique et le format retenu pour la série distincte d'avoirs.
 - Les mentions et coordonnées de facturation confirmées par l'entreprise.
 - Quelques exemples anonymisés : devis, facture, mission et export de clients.
 - Le choix du circuit réel de transmission des factures aux destinataires.
