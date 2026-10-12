@@ -1,6 +1,6 @@
 # Avancement et périmètre de la première version locale
 
-État au 11 octobre 2026, après le chapitre 24 et les bonus métier.
+État au 12 octobre 2026, après le chapitre 24 et les bonus métier.
 
 ## Déjà implémenté
 
@@ -9,13 +9,13 @@
 | Socle | Payload, authentification, accès privés, SQLite locale, tests | Installation et démarrage sur l'ordinateur cible |
 | Clients | Fiches, recherche, import CSV | Colonnes et qualité de l'export réel du tableur |
 | Devis | Lignes, montants, personnalisation, aperçu PDF, validation interne, numéro final et préparation d'e-mail | Présentation attendue et configuration réelle des courriels |
-| Missions | Relations clients, dates de campagne, calendrier des journées, temps, pièces, livrables, synthèse et relevés d'élimination | Ergonomie avec quelques missions représentatives |
+| Missions | Intitulés automatiques type/client/année, relations clients, dates de campagne, calendrier des journées, temps, pièces, livrables, synthèse et relevés d'élimination | Ergonomie avec quelques missions représentatives |
 | Classement | Fiches par mission, compteur indépendant et ajustable, ordre, années extrêmes, catégories sur deux niveaux, supports, choix W ou Cadre 1926 | Premier formulaire à affiner ; cotation détaillée, impression et export non implémentés |
 | Courriels | Transport SMTP commun et récupération du mot de passe testés localement | Branchement au fournisseur et réception réelle différés |
 | Sauvegardes | Création et vérification locales | Organisation d'une copie hors du disque de travail et exercice de restauration |
 | Facturation | Brouillons, relectures, décisions, émission numérotée et PDF immuable pour le parcours EI sans TVA en France | Reprise des vrais numéros, mentions, PDF et circuit de transmission ; avoirs manquants |
 | Paiements | Journal immuable, règlements partiels, solde par facture et annulations de saisie motivées | Exemples réels, remboursements et vue globale non couverts |
-| Cours | 24 chapitres et bonus SMTP, relevés d'élimination et fiches de classement ; commandes et tests expliqués | Relecture pédagogique par une personne extérieure |
+| Cours | 24 chapitres et bonus SMTP, relevés d'élimination, fiches de classement et intitulés automatiques ; commandes et tests expliqués | Relecture pédagogique par une personne extérieure |
 
 « Implémenté » ne signifie pas encore « accepté par l'utilisatrice ». Les tests
 automatiques n'évaluent ni les habitudes de travail, ni les données réelles,
@@ -34,6 +34,9 @@ automatique Chorus Pro ou de déclaration URSSAF automatique. Le circuit réel d
 transmission des factures reste à qualifier avant de remplacer un outil existant.
 
 ## Lots restants
+
+Une [liste de recette à remplir](./RECETTE.md) est disponible. Sa préparation
+ne signifie pas que les essais sur l'ordinateur cible ont été réalisés.
 
 1. **Corrections de facturation** : qualifier et traiter les avoirs avant la bascule ;
    ne pas les confondre avec une annulation de saisie de paiement.

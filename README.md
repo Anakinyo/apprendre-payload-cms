@@ -54,12 +54,14 @@ pas indispensable pour suivre les premiers épisodes.
 Bonus : [Configurer SMTP et le mot de passe oublié](./bonus-email-smtp.md).
 Bonus : [Dater les missions et préparer les relevés d'élimination](./bonus-releves-elimination.md).
 Bonus : [Créer des fiches de classement numérotées par mission](./bonus-fiches-classement.md).
+Bonus : [Remplir automatiquement les intitulés de mission](./bonus-intitules-missions.md).
 
 25. Corriger les factures avec un parcours d'avoirs
 26. Recetter et exploiter la première version locale
 
 Le [bilan d'avancement et la feuille de route](./AVANCEMENT.md) distinguent ce qui
 est implémenté, ce qui reste à développer et ce qui doit être validé en usage réel.
+La [liste de recette](./RECETTE.md) prépare les essais sur l'ordinateur cible.
 
 Le premier usage se fait uniquement sur un ordinateur portable, avec Payload
 et SQLite en local. L'interface installable sur téléphone, la synchronisation,
