@@ -1,5 +1,7 @@
 # Apprendre Payload CMS - Episode 1 : installer un projet
 
+> Bonus pratique après installation : [ouvrir l'application par double-clic sous Windows](./bonus-lanceur-windows.md).
+
 ## Objectif du fil rouge
 
 Dans cette série, nous allons construire progressivement une application métier

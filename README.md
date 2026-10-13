@@ -7,6 +7,11 @@ Le fil rouge part d'un projet vide et introduit les concepts au moment où ils
 deviennent utiles : collections, champs, relations, permissions, hooks, API,
 génération de documents, tests et mise en production.
 
+## Bonus : ouvrir l'application sous Windows
+
+Une fois le projet installé, [le lanceur à double-clic](./bonus-lanceur-windows.md)
+permet d'ouvrir l'application sans saisir de commande au quotidien.
+
 ## Public visé
 
 Le cours s'adresse aux développeurs et développeuses qui connaissent les bases
