@@ -1,6 +1,6 @@
 # Avancement et périmètre de la première version locale
 
-État au 12 octobre 2026, après le chapitre 25 et les bonus métier.
+État au 13 octobre 2026, après le chapitre 25 et les bonus métier.
 
 ## Déjà implémenté
 
@@ -20,6 +20,12 @@
 « Implémenté » ne signifie pas encore « accepté par l'utilisatrice ». Les tests
 automatiques n'évaluent ni les habitudes de travail, ni les données réelles,
 ni l'ensemble des obligations propres à l'entreprise.
+
+Vérification technique du 13 octobre : **110 tests unitaires, 90 tests
+d'intégration et 35 tests navigateur réussis**, sur une base dédiée aux tests.
+Les essais couvrent notamment la confirmation des avoirs, leur numérotation,
+la conservation du PDF original et le nouveau solde. Ce bilan ne remplace pas
+la recette métier ni la confirmation des paramètres avant émission réelle.
 
 ## Définition de la version locale terminée
 

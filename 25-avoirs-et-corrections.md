@@ -129,6 +129,13 @@ pnpm test:e2e
 - Navigateur : aperçu, confirmation, émission, solde, téléchargement protégé,
   persistance après rechargement et présentation mobile.
 
+Dans un test navigateur, quitter le formulaire avant de supprimer les données
+de démonstration : l'administration peut encore effectuer des requêtes en arrière-plan.
+Supprimer d'abord les éléments dépendants, puis leurs parents. Une suppression
+Payload par lot renvoie une propriété `errors` : vérifier qu'elle est vide,
+et contrôler que les données attendues ont bien disparu. Un nettoyage incomplet
+peut faire échouer le test suivant, même si son propre parcours est correct.
+
 Les tests utilisent exclusivement la base de démonstration. Pour une correction
 nécessitant une nouvelle facture après neutralisation, le parcours lié et le
 transfert éventuel de paiements ne sont pas automatisés dans cette version.
