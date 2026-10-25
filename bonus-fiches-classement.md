@@ -12,7 +12,10 @@ elimination, independamment des journees de travail.
 - Type de classement : W ou Cadre 1926.
 - Description du contenu du dossier.
 - Annee extreme de debut et annee extreme de fin.
-- Categorie principale et sous-categorie facultative.
+- Categorie (niveau 1), obligatoire.
+- Fond (niveau 2), obligatoire.
+- Sous-fond (niveau 3), facultatif.
+- Niveau 4, facultatif et rattache au sous-fond.
 - Support de conservation.
 
 Les dates extremes restent exprimees en annees. Les libelles W et Cadre 1926
@@ -25,19 +28,43 @@ de la personne qui realise la mission.
 Dans le groupe Classement de l'administration, creer les categories et les
 supports de conservation. On peut aussi les creer depuis les boutons d'ajout
 des champs de relation. Une categorie sans parent est une categorie principale.
-Une categorie avec un parent est une sous-categorie. Ce premier jet limite
-explicitement la hierarchie a deux niveaux, sans cycle possible.
+Une categorie avec un parent appartient au niveau suivant. La hierarchie est
+limitee a quatre niveaux, sans cycle possible. Le niveau est calcule par le
+serveur et ne se saisit pas manuellement.
 
-La fiche propose les sous-categories du parent choisi. Le serveur verifie aussi
+Exemple : Secretariat general > Affaires generales > Police administrative >
+Recensement. On peut arreter une fiche au fond ou au sous-fond. On ne peut pas
+saisir un niveau 4 sans sous-fond. Les termes restent libres : l'application
+ne precharge pas ces exemples dans les donnees de l'entreprise.
+
+La fiche propose uniquement les enfants du parent choisi. Le serveur verifie aussi
 cette appartenance : filtrer une liste dans l'interface ne suffit pas a proteger
-une API. En changeant de categorie sur une fiche, choisir une sous-categorie
-compatible ou effacer l'ancienne selection.
+une API. En changeant un parent sur une fiche, choisir des descendants compatibles
+ou effacer les selections facultatives. Le fond reste obligatoire.
 
 Les doublons de noms (casse et espaces) sont refuses au meme niveau du meme
 parent. Deux parents peuvent avoir des sous-categories portant le meme nom.
 Un support ou une categorie deja utilise ne peut pas etre supprime. Le parent
 d'une categorie utilisee, ou ayant des enfants, ne peut pas etre change.
 Les noms et descriptions restent modifiables.
+
+## Contribuer une liste et choisir un referentiel
+
+Dans **Classement > Categories de classement > Create**, saisir un nom et
+laisser le parent vide pour le niveau 1. Creer ensuite le fond en choisissant
+ce premier terme comme parent, puis le sous-fond avec le fond comme parent,
+et enfin le niveau 4 avec le sous-fond comme parent. Le niveau est automatique.
+On peut renommer un terme ; deplacer un terme deja utilise ou possedant des
+enfants est bloque pour ne pas modifier silencieusement les fiches existantes.
+
+Il existe des cadres communs, notamment le cadre de 1926 pour les archives
+communales, mais il ne faut pas les confondre avec une liste universelle de
+rubriques metier a quatre niveaux. Les exemples du formulaire ne sont pas
+presentes comme un referentiel officiel. Valider le plan retenu avec la personne
+qui classe les archives avant de precharger une liste complete.
+
+Sources : [Association des archivistes francais, cotation des fonds](https://www.archivistes.org/ressources/fiche-pratique-3-cotation-des-fonds/)
+et [Archives de Toulouse, organisation des fonds et adaptations locales](https://archives.toulouse.fr/organisation-des-fonds/).
 
 ## Un compteur propre a chaque mission
 
@@ -77,6 +104,7 @@ Sur une installation existante, arreter le serveur puis executer :
 
 ```powershell
 pnpm upgrade:classification
+pnpm upgrade:classification-hierarchy
 pnpm generate:types
 pnpm generate:importmap
 pnpm test:unit
@@ -90,7 +118,22 @@ La reprise cree une sauvegarde SQLite avant d'ajouter les tables. Elle peut
 etre relancee sans remettre a 1 les compteurs deja modifies. Sur une installation
 neuve, Payload cree directement le schema.
 
+La seconde migration ajoute les relations des niveaux 3 et 4 et calcule les
+niveaux des categories existantes. Les anciens champs techniques `category`
+et `subcategory` sont conserves : `subcategory` porte desormais le libelle Fond.
+Les nouveaux champs sont `subfonds` et `classificationDetail`. Les selections
+existantes, descriptions, numeros et compteurs sont conserves.
+
+Une ancienne fiche sans sous-categorie reste lisible et signalee « Fond a
+completer » dans la mission. Le fond sera exige lors de sa prochaine sauvegarde.
+La migration affiche le nombre de ces fiches, sans leur attribuer un fond fictif.
+La colonne historique reste nullable en SQLite pour conserver ces anciennes
+fiches ; les validations Payload imposent la nouvelle regle aux ecritures.
+
 Les tests couvrent la hierarchie, les annees, les droits d'acces, les creations
 simultanees, les numeros manuels et les doublons, les compteurs independants,
 les suppressions protegees et la migration. Le test navigateur cree une fiche
-complete et controle son affichage sur ordinateur et sur mobile.
+complete a quatre niveaux et controle son affichage sur ordinateur et sur mobile.
+Les tests refusent aussi les niveaux sautes, les mauvaises branches, les cycles
+et un cinquieme niveau ; ils verifient que les niveaux facultatifs peuvent etre
+effaces ensemble sans changer le numero de la fiche.

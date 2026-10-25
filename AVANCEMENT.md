@@ -1,6 +1,6 @@
 # Avancement et périmètre de la première version locale
 
-État au 13 octobre 2026, après le chapitre 25 et les bonus métier.
+État au 25 octobre 2026, après le chapitre 25 et les bonus métier.
 
 ## Déjà implémenté
 
@@ -10,7 +10,7 @@
 | Clients | Fiches, recherche, import CSV | Colonnes et qualité de l'export réel du tableur |
 | Devis | Lignes, montants, personnalisation, aperçu PDF, validation interne, numéro final et préparation d'e-mail | Présentation attendue et configuration réelle des courriels |
 | Missions | Intitulés automatiques type/client/année, relations clients, dates de campagne, calendrier des journées, temps, pièces, livrables, synthèse et relevés d'élimination | Ergonomie avec quelques missions représentatives |
-| Classement | Fiches par mission, compteur indépendant et ajustable, ordre, années extrêmes, catégories sur deux niveaux, supports, choix W ou Cadre 1926 | Premier formulaire à affiner ; cotation détaillée, impression et export non implémentés |
+| Classement | Fiches par mission, compteur indépendant et ajustable, ordre, années extrêmes, catégorie et fond obligatoires, sous-fond et niveau 4 facultatifs, supports, choix W ou Cadre 1926 | Compléter les anciennes fiches sans fond ; cotation détaillée, impression et export non implémentés |
 | Courriels | Transport SMTP commun et récupération du mot de passe testés localement | Branchement au fournisseur et réception réelle différés |
 | Sauvegardes | Création et vérification locales | Organisation d'une copie hors du disque de travail et exercice de restauration |
 | Facturation | Brouillons, relectures, décisions, émission numérotée et PDF immuable pour le parcours EI sans TVA en France ; avoirs partiels/totaux et solde ajusté | Reprise des vrais numéros, mentions, PDF et transmission ; corrections d'identité/TVA et refacturation liée hors périmètre |
@@ -21,10 +21,11 @@
 automatiques n'évaluent ni les habitudes de travail, ni les données réelles,
 ni l'ensemble des obligations propres à l'entreprise.
 
-Vérification technique du 13 octobre : **110 tests unitaires, 90 tests
+Vérification technique du 25 octobre : **110 tests unitaires, 92 tests
 d'intégration et 35 tests navigateur réussis**, sur une base dédiée aux tests.
 Les essais couvrent notamment la confirmation des avoirs, leur numérotation,
-la conservation du PDF original et le nouveau solde. Ce bilan ne remplace pas
+la conservation du PDF original, le nouveau solde et le classement à quatre niveaux.
+Ce bilan ne remplace pas
 la recette métier ni la confirmation des paramètres avant émission réelle.
 
 ## Définition de la version locale terminée

@@ -20,7 +20,9 @@ factures. Ne pas utiliser les vrais compteurs pour apprendre le parcours.
 - [ ] Changer l'année puis essayer un intitulé personnalisé.
 - [ ] Ajouter une journée avec le calendrier et vérifier le temps total.
 - [ ] Joindre puis télécharger une pièce de mission.
-- [ ] Créer catégories, sous-catégories et supports de conservation.
+- [ ] Créer une branche catégorie > fond > sous-fond > niveau 4 et un support de conservation.
+- [ ] Créer une fiche avec seulement catégorie et fond, puis une fiche à quatre niveaux.
+- [ ] Vérifier le refus d'un fond manquant, d'une mauvaise branche et d'un niveau sauté.
 - [ ] Créer deux fiches de classement ; vérifier numéros et années extrêmes.
 - [ ] Créer une deuxième mission : sa première fiche doit porter le numéro 1.
 - [ ] Modifier le prochain numéro et vérifier le refus d'un doublon.
