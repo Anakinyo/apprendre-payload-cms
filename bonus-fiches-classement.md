@@ -90,9 +90,55 @@ ne peut pas etre deplacee vers une autre mission dans ce premier jet.
 ## Parcours utilisateur
 
 Ouvrir une mission de classement, puis « Nouvelle fiche » dans la section
-« Fiches de classement ». Choisir la mission dans le formulaire, renseigner
-les champs et enregistrer. La page de mission affiche les fiches par ordre,
+« Fiches de classement ». La mission est deja choisie dans l'ecran de saisie
+en chaine. Renseigner les champs puis cliquer sur « Enregistrer et continuer ».
+La page de mission affiche les fiches par ordre,
 avec une pagination de 25 fiches. Chaque lien permet de rouvrir la fiche.
+
+### Enchainer les dossiers
+
+Apres confirmation du serveur, le formulaire prepare la fiche suivante :
+numero enregistre + 1, memes selections, description et numero d'ordre,
+mais annees extremes de debut et de fin vides et obligatoires. Le curseur
+revient sur l'annee de debut. Aucune nouvelle fiche n'est enregistree sans
+une nouvelle saisie des deux annees et une action sur le bouton.
+
+Une erreur conserve tous les champs. Le bouton est bloque pendant l'envoi ;
+le serveur refuse un numero deja utilise. Si la connexion est interrompue
+apres l'enregistrement, verifier la mission avant de choisir un autre numero.
+Les valeurs reprises restent seulement en memoire dans cet ecran : recharger
+la page ne restaure pas un brouillon. Un avertissement protege une saisie
+modifiee lors de la fermeture ou du retour vers la mission.
+
+Le formulaire classique de l'administration reste disponible pour creer une
+fiche ponctuelle et corriger une fiche existante. La saisie en chaine reutilise
+la meme API et les memes validations, sans modifier la base de donnees.
+
+### Construire cette saisie dans le fil rouge
+
+1. La page serveur `src/app/(frontend)/missions/[id]/classement/page.tsx`
+   verifie la connexion et le type de mission, puis charge les vocabulaires
+   autorises et le prochain numero.
+2. Le composant React `src/components/ClassificationEntryForm.tsx` conserve
+   les champs dans un etat local. Changer un parent vide les niveaux enfants,
+   pour eviter de conserver une selection appartenant a une autre branche.
+3. Le bouton envoie une requete POST a `/api/classification-records`.
+   Les validations de la collection restent la reference, y compris lorsqu'un
+   utilisateur contourne les controles du navigateur.
+4. Uniquement apres une reponse reussie, copier l'etat, remplacer le numero
+   par celui retourne + 1 et vider les deux annees. Une erreur laisse l'etat intact.
+
+Pour verifier ce parcours seul, executer `pnpm test:e2e --grep "chains records"`.
+Le scenario cree deux fiches dans la base de test, controle les annees vides,
+la reprise des autres valeurs et simule une erreur avant de reessayer.
+Il controle ensuite la recherche de mission et son compteur de fiches.
+
+Dans le tableau de bord, l'onglet Missions recherche le client, l'intitule,
+le contact, le lieu ou le libelle du type de mission. Un filtre par type peut
+etre combine avec la recherche. Le tableau affiche le client, le type,
+la date de creation et, pour le classement, le nombre reel de fiches.
+Ce nombre n'est pas deduit du prochain numero : une mission commencant a 40
+avec deux fiches en affiche bien deux, pas quarante et une.
 
 Les fiches restent modifiables et supprimables par les utilisateurs connectes.
 Il ne s'agit pas encore d'un inventaire final fige : export, impression,

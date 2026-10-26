@@ -195,10 +195,10 @@ construite; il ne reconstruit pas le code. Après une mise à jour, arrêter le
 serveur, sauvegarder, effectuer les migrations nécessaires, tester et refaire
 `pnpm build` avant de relancer.
 
-Le [lanceur Windows](https://github.com/Anakinyo/payload-archiviste/blob/main/Ouvrir-application.cmd)
-peut être lancé par double-clic. Il vérifie la présence de Node.js, pnpm, `.env`,
-de la base et du build, puis démarre la même commande. Garder sa fenêtre ouverte
-pendant l'utilisation; `Ctrl+C` arrête le serveur. Ce n'est pas un installateur,
+Le [lanceur Windows](./bonus-lanceur-windows.md)
+peut être lancé par double-clic. Il vérifie Node.js, `.env`, les dépendances
+et le build, puis démarre le serveur en arrière-plan et ouvre le navigateur.
+Fermer le navigateur n'arrête pas ce serveur. Ce n'est pas un installateur,
 un service Windows ou un système de mise à jour automatique.
 
 Si le port 3000 est déjà occupé, ne pas arrêter un programme inconnu : choisir
@@ -230,6 +230,20 @@ La mise en page mobile est vérifiée, sans annoncer un accès téléphone actif
 
 Sources : [unitaires](https://github.com/Anakinyo/payload-archiviste/blob/main/tests/unit/workspace.unit.spec.ts),
 [navigateur](https://github.com/Anakinyo/payload-archiviste/blob/main/tests/e2e/frontend.e2e.spec.ts).
+
+## Évolution : rechercher les missions
+
+L'onglet Missions possède désormais une recherche par client, contact, adresse,
+intitulé ou type, combinable avec un filtre de type. Les filtres sont conservés
+dans les liens de pagination. Les lignes affichent le type et la date de
+création de la mission, sans les confondre avec la date de début affichée sous
+son intitulé. Le nom du client ouvre sa fiche ; celui de la mission ouvre le détail.
+
+Pour les missions de classement, un compteur indique les fiches réellement
+enregistrées et mène à leur inventaire. Le serveur compte uniquement les missions
+de la page courante, avec les contrôles d'accès habituels, sans charger le contenu
+de toutes les fiches. Le [bonus classement](./bonus-fiches-classement.md) décrit
+la saisie en chaîne ajoutée ensuite au fil rouge.
 
 ## Prochaine étape
 

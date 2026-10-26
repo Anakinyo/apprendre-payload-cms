@@ -22,6 +22,9 @@ factures. Ne pas utiliser les vrais compteurs pour apprendre le parcours.
 - [ ] Joindre puis télécharger une pièce de mission.
 - [ ] Créer une branche catégorie > fond > sous-fond > niveau 4 et un support de conservation.
 - [ ] Créer une fiche avec seulement catégorie et fond, puis une fiche à quatre niveaux.
+- [ ] Enchaîner deux fiches : valeurs reprises, numéro +1 et deux années obligatoires remises à vide.
+- [ ] Vérifier qu'une erreur conserve les champs et qu'un second clic sans années ne crée rien.
+- [ ] Rechercher une mission par client et par type ; ouvrir son détail et vérifier son compteur de fiches.
 - [ ] Vérifier le refus d'un fond manquant, d'une mauvaise branche et d'un niveau sauté.
 - [ ] Créer deux fiches de classement ; vérifier numéros et années extrêmes.
 - [ ] Créer une deuxième mission : sa première fiche doit porter le numéro 1.
