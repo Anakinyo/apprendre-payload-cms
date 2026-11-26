@@ -80,6 +80,8 @@ Le formulaire classique de l'administration reste disponible pour creer une
 fiche ponctuelle et corriger une fiche existante. La saisie en chaine reutilise
 la meme API et les memes validations, sans modifier la base de donnees.
 
+Dans le formulaire de l’administration, le sélecteur **Mission** permet de chercher par nom de client. Les choix affichent le client en premier, suivi de la date et de l’intitulé de la mission. Par exemple, « Mairie du Moulin · 12/03/2026 · Classement des délibérations ». Le nom affiché se met à jour si le client est renommé.
+
 ### Construire cette saisie dans le fil rouge
 
 1. La page serveur `src/app/(frontend)/missions/[id]/classement/page.tsx`
@@ -142,6 +144,7 @@ Sur une installation existante, arreter le serveur puis executer :
 pnpm upgrade:classification
 pnpm upgrade:classification-hierarchy
 pnpm upgrade:classification-schemes
+pnpm upgrade:mission-labels
 pnpm generate:types
 pnpm generate:importmap
 pnpm test:unit
