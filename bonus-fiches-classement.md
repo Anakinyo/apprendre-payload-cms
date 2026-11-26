@@ -28,7 +28,7 @@ Par exemple, on peut créer « Affaires générales » puis « Police administra
 
 Dans une fiche, le type de classement détermine les séries proposées. La série détermine les sous-séries proposées. Le serveur vérifie aussi cette cohérence lorsque la fiche est créée via l’API. Un même nom peut exister dans les deux plans.
 
-Sur la page de création d’un terme, **Enregistrer** revient à la liste et **Enregistrer et créer le suivant** ouvre un formulaire vide. Les supports de conservation et les types de documents utilisent le même composant Payload, `VocabularySaveButtons`.
+Sur la page de création d’un terme, **Enregistrer** revient à la liste. Le bouton **Enregistrer et créer un nouvel élément**, visible en création et en modification, sauvegarde la saisie puis ouvre un formulaire vide. Les supports de conservation et les types de documents proposent les mêmes actions grâce au composant Payload `VocabularySaveButtons`.
 
 ## Un compteur propre a chaque mission
 
