@@ -12,10 +12,7 @@ elimination, independamment des journees de travail.
 - Type de classement : W ou Cadre 1926.
 - Description du contenu du dossier.
 - Annee extreme de debut et annee extreme de fin.
-- Categorie (niveau 1), obligatoire.
-- Fond (niveau 2), obligatoire.
-- Sous-fond (niveau 3), facultatif.
-- Niveau 4, facultatif et rattache au sous-fond.
+- Série et sous-série, toutes deux obligatoires.
 - Support de conservation.
 
 Les dates extremes restent exprimees en annees. Les libelles W et Cadre 1926
@@ -23,48 +20,15 @@ sont des choix de saisie : ils ne generent pas de cote reglementaire, ne
 prechargent pas un cadre officiel et ne valident pas le classement a la place
 de la personne qui realise la mission.
 
-## Deux vocabulaires partages
+## Préparer les séries et sous-séries
 
-Dans le groupe Classement de l'administration, creer les categories et les
-supports de conservation. On peut aussi les creer depuis les boutons d'ajout
-des champs de relation. Une categorie sans parent est une categorie principale.
-Une categorie avec un parent appartient au niveau suivant. La hierarchie est
-limitee a quatre niveaux, sans cycle possible. Le niveau est calcule par le
-serveur et ne se saisit pas manuellement.
+Depuis l’espace de travail, ouvrir **Administration**, puis **Classement → Séries et sous-séries**. Choisir W ou Cadre 1926, saisir le nom du terme et laisser la série parente vide pour créer une série. Pour créer une sous-série, choisir sa série parente dans le même plan.
 
-Exemple : Secretariat general > Affaires generales > Police administrative >
-Recensement. On peut arreter une fiche au fond ou au sous-fond. On ne peut pas
-saisir un niveau 4 sans sous-fond. Les termes restent libres : l'application
-ne precharge pas ces exemples dans les donnees de l'entreprise.
+Par exemple, on peut créer « Affaires générales » puis « Police administrative » dans le plan Cadre 1926. Les termes sont à renseigner selon le plan utilisé pour la mission.
 
-La fiche propose uniquement les enfants du parent choisi. Le serveur verifie aussi
-cette appartenance : filtrer une liste dans l'interface ne suffit pas a proteger
-une API. En changeant un parent sur une fiche, choisir des descendants compatibles
-ou effacer les selections facultatives. Le fond reste obligatoire.
+Dans une fiche, le type de classement détermine les séries proposées. La série détermine les sous-séries proposées. Le serveur vérifie aussi cette cohérence lorsque la fiche est créée via l’API. Un même nom peut exister dans les deux plans.
 
-Les doublons de noms (casse et espaces) sont refuses au meme niveau du meme
-parent. Deux parents peuvent avoir des sous-categories portant le meme nom.
-Un support ou une categorie deja utilise ne peut pas etre supprime. Le parent
-d'une categorie utilisee, ou ayant des enfants, ne peut pas etre change.
-Les noms et descriptions restent modifiables.
-
-## Contribuer une liste et choisir un referentiel
-
-Dans **Classement > Categories de classement > Create**, saisir un nom et
-laisser le parent vide pour le niveau 1. Creer ensuite le fond en choisissant
-ce premier terme comme parent, puis le sous-fond avec le fond comme parent,
-et enfin le niveau 4 avec le sous-fond comme parent. Le niveau est automatique.
-On peut renommer un terme ; deplacer un terme deja utilise ou possedant des
-enfants est bloque pour ne pas modifier silencieusement les fiches existantes.
-
-Il existe des cadres communs, notamment le cadre de 1926 pour les archives
-communales, mais il ne faut pas les confondre avec une liste universelle de
-rubriques metier a quatre niveaux. Les exemples du formulaire ne sont pas
-presentes comme un referentiel officiel. Valider le plan retenu avec la personne
-qui classe les archives avant de precharger une liste complete.
-
-Sources : [Association des archivistes francais, cotation des fonds](https://www.archivistes.org/ressources/fiche-pratique-3-cotation-des-fonds/)
-et [Archives de Toulouse, organisation des fonds et adaptations locales](https://archives.toulouse.fr/organisation-des-fonds/).
+Sur la page de création d’un terme, **Enregistrer** revient à la liste et **Enregistrer et créer le suivant** ouvre un formulaire vide. Les supports de conservation et les types de documents utilisent le même composant Payload, `VocabularySaveButtons`.
 
 ## Un compteur propre a chaque mission
 
@@ -175,6 +139,7 @@ Sur une installation existante, arreter le serveur puis executer :
 ```powershell
 pnpm upgrade:classification
 pnpm upgrade:classification-hierarchy
+pnpm upgrade:classification-schemes
 pnpm generate:types
 pnpm generate:importmap
 pnpm test:unit
@@ -188,22 +153,6 @@ La reprise cree une sauvegarde SQLite avant d'ajouter les tables. Elle peut
 etre relancee sans remettre a 1 les compteurs deja modifies. Sur une installation
 neuve, Payload cree directement le schema.
 
-La seconde migration ajoute les relations des niveaux 3 et 4 et calcule les
-niveaux des categories existantes. Les anciens champs techniques `category`
-et `subcategory` sont conserves : `subcategory` porte desormais le libelle Fond.
-Les nouveaux champs sont `subfonds` et `classificationDetail`. Les selections
-existantes, descriptions, numeros et compteurs sont conserves.
+La migration de la hiérarchie met à niveau les anciennes installations. Celle des plans sauvegarde la base, rattache les termes existants à W et copie dans Cadre 1926 les séries et sous-séries déjà utilisées par des fiches de ce plan. Les anciens niveaux 3 et 4 restent consultables sur les fiches concernées.
 
-Une ancienne fiche sans sous-categorie reste lisible et signalee « Fond a
-completer » dans la mission. Le fond sera exige lors de sa prochaine sauvegarde.
-La migration affiche le nombre de ces fiches, sans leur attribuer un fond fictif.
-La colonne historique reste nullable en SQLite pour conserver ces anciennes
-fiches ; les validations Payload imposent la nouvelle regle aux ecritures.
-
-Les tests couvrent la hierarchie, les annees, les droits d'acces, les creations
-simultanees, les numeros manuels et les doublons, les compteurs independants,
-les suppressions protegees et la migration. Le test navigateur cree une fiche
-complete a quatre niveaux et controle son affichage sur ordinateur et sur mobile.
-Les tests refusent aussi les niveaux sautes, les mauvaises branches, les cycles
-et un cinquieme niveau ; ils verifient que les niveaux facultatifs peuvent etre
-effaces ensemble sans changer le numero de la fiche.
+Les tests vérifient les deux plans, le refus d’un troisième niveau, la conservation des données pendant la migration et les deux destinations après la création d’un terme. Pour les parcours navigateur, exécuter `pnpm test:e2e --grep "classification record|chains records"`.

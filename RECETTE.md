@@ -20,8 +20,8 @@ factures. Ne pas utiliser les vrais compteurs pour apprendre le parcours.
 - [ ] Changer l'année puis essayer un intitulé personnalisé.
 - [ ] Ajouter une journée avec le calendrier et vérifier le temps total.
 - [ ] Joindre puis télécharger une pièce de mission.
-- [ ] Créer une branche catégorie > fond > sous-fond > niveau 4 et un support de conservation.
-- [ ] Créer une fiche avec seulement catégorie et fond, puis une fiche à quatre niveaux.
+- [ ] Créer une série et une sous-série dans chaque plan, ainsi qu’un support de conservation. Vérifier les deux actions après l’enregistrement d’un terme.
+- [ ] Créer une fiche W puis une fiche Cadre 1926. Vérifier que seules les séries du plan choisi et les sous-séries de la série sélectionnée sont proposées.
 - [ ] Enchaîner deux fiches : valeurs reprises, numéro +1 et deux années obligatoires remises à vide.
 - [ ] Vérifier qu'une erreur conserve les champs et qu'un second clic sans années ne crée rien.
 - [ ] Rechercher une mission par client et par type ; ouvrir son détail et vérifier son compteur de fiches.
