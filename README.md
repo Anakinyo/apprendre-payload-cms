@@ -61,6 +61,7 @@ Bonus : [Configurer SMTP et le mot de passe oublié](./bonus-email-smtp.md).
 Bonus : [Dater les missions et préparer les relevés d'élimination](./bonus-releves-elimination.md).
 Bonus : [Créer des fiches de classement numérotées par mission](./bonus-fiches-classement.md).
 Bonus : [Remplir automatiquement les intitulés de mission](./bonus-intitules-missions.md).
+Bonus IA : [Donner à un assistant de code les repères du projet](./bonus-ia-reperes-projet.md).
 
 26. Recetter et exploiter la première version locale
 
