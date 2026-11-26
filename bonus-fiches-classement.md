@@ -80,7 +80,7 @@ Le formulaire classique de l'administration reste disponible pour creer une
 fiche ponctuelle et corriger une fiche existante. La saisie en chaine reutilise
 la meme API et les memes validations, sans modifier la base de donnees.
 
-Dans l’administration, **Enregistrer** sauvegarde la fiche et revient à la liste des fiches. **Enregistrer et créer une nouvelle fiche** sauvegarde la fiche puis ouvre un formulaire vide.
+Dans l’administration, **Enregistrer** sauvegarde la fiche et revient à la liste des fiches. **Enregistrer et créer une nouvelle fiche** reprend la mission, le type de classement, la série et la sous-série après la sauvegarde. Le numéro de fiche et le numéro d’ordre augmentent chacun de 1 à partir des valeurs enregistrées. La description, les deux années et le support restent à saisir.
 
 Dans le formulaire de l’administration, le sélecteur **Mission** permet de chercher par nom de client. Les choix affichent le client en premier, suivi de la date et de l’intitulé de la mission. Par exemple, « Mairie du Moulin · 12/03/2026 · Classement des délibérations ». Le nom affiché se met à jour si le client est renommé.
 
