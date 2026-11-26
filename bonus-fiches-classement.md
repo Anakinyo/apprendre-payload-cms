@@ -82,6 +82,8 @@ la meme API et les memes validations, sans modifier la base de donnees.
 
 Dans l’administration, **Enregistrer** sauvegarde la fiche et revient à la liste des fiches. **Enregistrer et créer une nouvelle fiche** reprend la mission, le type de classement, la série et la sous-série après la sauvegarde. Le numéro de fiche et le numéro d’ordre augmentent chacun de 1 à partir des valeurs enregistrées. La description, les deux années et le support restent à saisir.
 
+Si un champ obligatoire manque, la fiche reste ouverte. Le serveur renvoie une `ValidationError` Payload avec le chemin et le message de chaque champ concerné. L’administration affiche ces messages en français à côté des champs signalés.
+
 Dans le formulaire de l’administration, le sélecteur **Mission** permet de chercher par nom de client. Les choix affichent le client en premier, suivi de la date et de l’intitulé de la mission. Par exemple, « Mairie du Moulin · 12/03/2026 · Classement des délibérations ». Le nom affiché se met à jour si le client est renommé.
 
 ### Construire cette saisie dans le fil rouge
