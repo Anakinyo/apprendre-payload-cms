@@ -28,7 +28,9 @@ Par exemple, on peut créer « Affaires générales » puis « Police administra
 
 Dans une fiche, le type de classement détermine les séries proposées. La série détermine les sous-séries proposées. Le serveur vérifie aussi cette cohérence lorsque la fiche est créée via l’API. Un même nom peut exister dans les deux plans.
 
-Sur la page de création d’un terme, **Enregistrer** revient à la liste. Le bouton **Enregistrer et créer un nouvel élément**, visible en création et en modification, sauvegarde la saisie puis ouvre un formulaire vide. Les supports de conservation et les types de documents proposent les mêmes actions grâce au composant Payload `VocabularySaveButtons`.
+En création comme en modification d’un terme, **Enregistrer** revient à la liste. **Enregistrer et créer un nouvel élément** sauvegarde la saisie puis ouvre un formulaire vide. Les supports de conservation et les types de documents proposent les mêmes actions grâce au composant Payload `VocabularySaveButtons`.
+
+La liste affiche séparément les plans W et Cadre 1926. Cliquer sur le nom d’un terme pour le modifier. Les sous-séries sont en retrait sous leur série parente. **Vue tableau** ouvre la liste habituelle de Payload, avec ses filtres et actions de gestion. **Vue hiérarchique** revient à l’arborescence.
 
 ## Un compteur propre a chaque mission
 
