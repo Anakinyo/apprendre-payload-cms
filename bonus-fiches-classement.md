@@ -140,9 +140,33 @@ la date de creation et, pour le classement, le nombre reel de fiches.
 Ce nombre n'est pas deduit du prochain numero : une mission commencant a 40
 avec deux fiches en affiche bien deux, pas quarante et une.
 
+## Imprimer les etiquettes des boites
+
+Dans la mission, la zone « Fiches de classement » propose « Imprimer les
+etiquettes ». Elle produit un PDF calibre pour le format **Avery L7165** :
+une feuille A4 de huit etiquettes, en deux colonnes et quatre lignes
+(99,1 x 67,7 mm). Ce format est aussi disponible dans les modeles Word et
+chez plusieurs fabricants compatibles.
+
+Laisser « De la fiche » et « A la fiche » vides imprime toutes les fiches de
+la mission. Pour reimprimer une partie, saisir les deux bornes incluses, par
+exemple 103 et 144. Le PDF ne contient alors que les fiches dont le numero est
+compris entre 103 et 144, avec huit emplacements par feuille.
+
+Ouvrir le PDF et imprimer en A4, a taille reelle (100 %). Faire un premier essai
+sur papier ordinaire et le superposer a une feuille d'etiquettes a contre-jour.
+Pour une autre planche A4 de deux colonnes et quatre lignes, ouvrir
+« Dimensions de la planche ». Saisir la largeur et la hauteur des etiquettes,
+les marges gauche et haute, puis les ecarts entre les etiquettes, en millimetres.
+Les descriptions longues sont abregees sur l'etiquette.
+
+Le formulaire transmet la plage et le gabarit au serveur. Celui-ci valide que
+la grille tient sur la feuille, puis lit les fiches de la mission dans l'ordre
+de leurs numeros. Le generateur convertit les millimetres en points PDF et
+place chaque etiquette a sa position sur une page A4.
+
 Les fiches restent modifiables et supprimables par les utilisateurs connectes.
-Il ne s'agit pas encore d'un inventaire final fige : export, impression,
-cotation plus precise et formulaire metier complet restent a definir.
+L'export de l'inventaire complet et la cotation detaillee restent a definir.
 
 ## Installation et tests
 

@@ -27,6 +27,7 @@ factures. Ne pas utiliser les vrais compteurs pour apprendre le parcours.
 - [ ] Rechercher une mission par client et par type ; ouvrir son détail et vérifier son compteur de fiches.
 - [ ] Vérifier le refus d'un fond manquant, d'une mauvaise branche et d'un niveau sauté.
 - [ ] Créer deux fiches de classement ; vérifier numéros et années extrêmes.
+- [ ] Ouvrir le PDF des étiquettes pour toutes les fiches puis pour une plage. Imprimer une page de test à 100 % et vérifier son alignement avec la planche.
 - [ ] Créer une deuxième mission : sa première fiche doit porter le numéro 1.
 - [ ] Modifier le prochain numéro et vérifier le refus d'un doublon.
 
