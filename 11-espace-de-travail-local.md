@@ -245,6 +245,24 @@ de la page courante, avec les contrôles d'accès habituels, sans charger le con
 de toutes les fiches. Le [bonus classement](./bonus-fiches-classement.md) décrit
 la saisie en chaîne ajoutée ensuite au fil rouge.
 
+## Évolution : un accueil d’administration réduit
+
+L’administration affiche par défaut trois entrées, **Clients**, **Missions** et
+**Fiches de classement**. Le bouton **Vue complète** réaffiche le tableau de
+bord et le menu Payload. **Vue réduite** revient aux trois entrées. Le navigateur
+retient le choix. Les permissions d’accès sont les mêmes dans les deux vues.
+
+Dans une fiche client, les raccourcis des devis, factures émises et brouillons
+ouvrent des listes filtrées sur ce client. **Nouveau devis** et **Préparer une
+facture** ouvrent les formulaires avec le client déjà sélectionné.
+
+Pour reproduire cet écran, renseigner `admin.components.Nav` et
+`admin.components.views.dashboard.Component` dans `payload.config.ts`.
+`AdminHome.tsx` choisit la vue selon un cookie du navigateur. Le composant
+`ClientCommercialLinks.tsx` construit les liens depuis la fiche client.
+`CommercialClientPrefill.tsx` initialise le champ de relation quand le formulaire
+est prêt. Les validations habituelles de Payload s’appliquent à l’enregistrement.
+
 ## Prochaine étape
 
 Le [chapitre 12](./12-importer-clients-csv.md) ajoute l'import des clients du
